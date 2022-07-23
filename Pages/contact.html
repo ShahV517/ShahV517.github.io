@@ -35,7 +35,7 @@
                 </div>
                 <div class="column">
                     
-                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwI_jalhJxbqycLQa0yMxGzcI9huCHcIeS3h_IpuseVmaFjBCFb-Po0UiG2wGvfyTTx/exec" id="google_form">
+                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwI_jalhJxbqycLQa0yMxGzcI9huCHcIeS3h_IpuseVmaFjBCFb-Po0UiG2wGvfyTTx/exec" id="google_form" onsubmit="return submitUserForm();">
 
                         <label for="firstname">First Name</label>
                         <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
@@ -52,7 +52,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Enter your message" style="height: 170px" required></textarea>
 
-                        <div class="g-recaptcha" data-sitekey="6LfgFxYhAAAAAFkHXKgcsbgj52whrxBe1NKH9Mae" data-size="compact"></div>
+                        <div class="g-recaptcha" data-sitekey="6LfgFxYhAAAAAFkHXKgcsbgj52whrxBe1NKH9Mae" data-size="compact" data-callback="verifyCaptcha"></div>
+                        <div id="g-recaptcha-error"></div>
 
                         <input type="submit" value="Submit">
                     </form>
@@ -75,6 +76,20 @@
             }
         });
     });
+</script>
+<script>
+var recaptcha_response = "";
+function submitUserForm() {
+    if (recaptcha_response.length == 0) {
+        document.getElementById("g-recaptcha-error").innerHTML = "Please verify that you are not a robot.";
+        return false;
+    }
+    return true;
+}
+function verifyCaptcha(response) {
+    recaptcha_response = response;
+    document.getElementById("g-recaptcha-error").innerHTML = "";
+}
 </script>
 </body>
 </html>
