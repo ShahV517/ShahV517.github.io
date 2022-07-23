@@ -66,9 +66,6 @@
     if (recaptcha.length === 0) {
         document.getElementById("g-recaptcha-error").innerHTML = '<span style="color:red;">Please verify that you are not a robot.</span>';
         return false;
-    } else {
-        document.getElementById("g-recaptcha-error").innerHTML = "";
-        return true;
     }
     $('#google_form').submit(function(e) {
         e.preventDefault();
