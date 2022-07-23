@@ -35,7 +35,7 @@
                 </div>
                 <div class="column">
                     
-                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwI_jalhJxbqycLQa0yMxGzcI9huCHcIeS3h_IpuseVmaFjBCFb-Po0UiG2wGvfyTTx/exec" id="google_form" onsubmit="return submitUserForm();">
+                    <form method="POST" action="https://script.google.com/macros/s/AKfycbwI_jalhJxbqycLQa0yMxGzcI9huCHcIeS3h_IpuseVmaFjBCFb-Po0UiG2wGvfyTTx/exec" id="google_form">
 
                         <label for="firstname">First Name</label>
                         <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
@@ -52,21 +52,15 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Enter your message" style="height: 170px" required></textarea>
 
-                        <div class="g-recaptcha" data-sitekey="6LfgFxYhAAAAAFkHXKgcsbgj52whrxBe1NKH9Mae" data-size="compact" data-callback="verifyCaptcha"></div>
-                        <div id="g-recaptcha-error"></div>
+                        <div class="g-recaptcha" data-sitekey="6LfgFxYhAAAAAFkHXKgcsbgj52whrxBe1NKH9Mae" data-size="compact" data-callback="verifyCaptcha" data-expired-callback="expiredCaptcha"></div>
 
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" disabled>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 <script type="text/javascript">
-    var recaptcha = grecaptcha.getResponse();
-    if (recaptcha.length === 0) {
-        document.getElementById("g-recaptcha-error").innerHTML = '<span style="color:red;">Please verify that you are not a robot.</span>';
-        return false;
-    }
     $('#google_form').submit(function(e) {
         e.preventDefault();
         var form = $(this);
@@ -83,10 +77,12 @@
     });
 </script>
 <script>
-function verifyCaptcha(response) {
-    recaptcha_response = response;
-    document.getElementById("g-recaptcha-error").innerHTML = "";
-}
+    function verifyCaptcha() {
+        $('#google_form input[type="submit"]').removeAttr('disabled');
+    }
+    function expiredCaptcha() {
+        $('#google_form input[type="submit"]').attr('disabled', 'disabled');
+    }
 </script>
 </body>
 </html>
