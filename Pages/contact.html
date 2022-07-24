@@ -54,7 +54,7 @@
 
                         <div class="g-recaptcha" data-sitekey="6LfgFxYhAAAAAFkHXKgcsbgj52whrxBe1NKH9Mae" data-size="compact" data-callback="verifyCaptcha" data-expired-callback="expiredCaptcha"></div>
 
-                        <input type="submit" value="Submit" disabled style="filter: opacity(0.5)">
+                        <input type="submit" value="Submit" disabled>
                     </form>
                 </div>
             </div>
@@ -78,11 +78,10 @@
 </script>
 <script>
     function verifyCaptcha() {
-        $('#google_form input[type="submit"]').removeAttr('disabled').removeAttr('style[filter]');
-
+        $('#google_form input[type="submit"]').removeAttr('disabled');
     }
     function expiredCaptcha() {
-        $('#google_form input[type="submit"]').attr('disabled', 'disabled').attr('style', 'filter: opacity(0.5)');
+        $('#google_form input[type="submit"]').attr('disabled', 'disabled');
     }
 </script>
 </body>
