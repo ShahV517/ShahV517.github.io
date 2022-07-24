@@ -78,8 +78,7 @@
 </script>
 <script>
     function verifyCaptcha() {
-        $('#google_form input[type="submit"]').removeAttr('disabled')
-        $('#google_form input[type="submit"]').removeAttr('style[filter]');
+        $('#google_form input[type="submit"]').removeAttr('disabled').removeAttr('style[filter]');
 
     }
     function expiredCaptcha() {
