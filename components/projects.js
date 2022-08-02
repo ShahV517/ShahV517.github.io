@@ -4,8 +4,26 @@ const Projects = () => {
             <div className="container">
                 <h1 className="projects">Projects</h1>
                 <p className="projects-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel orci at nibh lacinia porta. Vivamus feugiat venenatis dolor, ut vulputate magna tincidunt a. Aenean rhoncus libero ipsum. Curabitur et eros nisi. Etiam nisl turpis, elementum a consequat eu, sagittis id eros. Nam suscipit lacinia risus, a vulputate augue lacinia eget. Nulla facilisi. In molestie velit vitae erat aliquet facilisis. Aliquam erat volutpat. Pellentesque lectus felis, mattis et ante sed, semper pulvinar elit. Quisque gravida metus sit amet enim volutpat ornare. In hac habitasse platea dictumst. Phasellus lobortis ipsum lacinia feugiat commodo. Donec a orci purus.
+                    Here are some of my projects:
                 </p>
+                <ul className="projects-list">
+                    <li className="projects-item">
+                        <a href="https://github.com/ShahV517/whats-on-your-mind" target="_blank" rel="noreferrer" className="projects-link">
+                        Whats On Your Mind
+                        </a>
+                        <p className="projects-text-small">
+                            A social media app that allows users to post and share their thoughts.
+                        </p>
+                    </li>
+                    <li className="projects-item">
+                        <a href="https://github.com/ShahV517/league-of-legends-champions" target="_blank" rel="noreferrer" className="projects-link">
+                            League of Legends Champions
+                            </a>
+                        <p className="projects-text-small">
+                            A web application that displays the champions of League of Legends.
+                        </p>
+                    </li>
+                </ul>
             </div>
 
         </div>
