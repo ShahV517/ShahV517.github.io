@@ -1,0 +1,20 @@
+.title {
+  color: #333;
+  padding-bottom: 20px; /* 20px bottom */
+  text-align: center; /* Center text */
+} /* Title */
+
+.text {
+  color: #777;
+} /* Text */
+
+.btn {
+  display: block; /* Button is a block element */
+  width: 150px; /* 150px wide */
+  padding: 8px 0; /* 8px top, 0 left, 0 bottom */
+  margin: 20px auto; /* 20px top, auto left, 0 bottom */
+  background: #4979ff; /* Blue */
+  border-radius: 4px; /* Rounded corners */
+  color: white; /* White text */
+  text-align: center; /* Center text */
+}
