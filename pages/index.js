@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import About from '../components/about'
 import Waves from '../components/waves'
 import Contact from '../components/contact'
 import Header from '../components/header'
 import Projects from '../components/projects'
-import Script from 'next/script'
 
 export default function Home() {
   return (
