@@ -1,6 +1,6 @@
 # Personal website where I share more about my interests and projects
 
--shahv517.vercel.app
+https://shahv517.vercel.app
 
 ### Technologies Used
 -JavaScript
